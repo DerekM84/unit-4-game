@@ -1,19 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Unit 4 Game</title>
-    <link type ="text/css" rel="stylesheet" href="./assets/css/reset.css">
-    <link type ="text/css" rel="stylesheet" href="./assets/css/style.css">
+    <link type="text/css" rel="stylesheet" href="./assets/css/reset.css">
+    <link type="text/css" rel="stylesheet" href="./assets/css/style.css">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
 </head>
+
 <body>
-    
+    <div class="header-container">
+        <div class="double-wrap">
+            <div class="wrap">
+                <h1> [ The Expedition's Payout ]</h1>
+                <p> A party of 20 explorers set out and only 2 returned.</p>
+                <br>
+                <hr>
+                <br>
+                <p> They decided on a 50/50 treasure split. They each need 100 points to be fair.</p>
+                <br>
+                <br>
+                <p> Help create an even split by choosing the right combination of gems!</p>
+            </div>
+        </div>
+    </div>
+    <div class="score-container">
+        <div class="score-double-wrap">
+            <div class="score-wrap">
+                <h2>[ Gem Market Value ]</h2>
+                <hr>
+                <br>
+                <h3 class="total-score gem-value">0</h3>
+            </div>
+        </div>
+    </div>
+    <div class="score-container">
+        <div class="score-double-wrap">
+            <div class="score-wrap">
+                <h2>[ Total Split ]</h2>
+                <hr>
+                <br>
+                <h3 class="total-score net-worth">0</h3>
+            </div>
+        </div>
+    </div>
+    <div class="gem-container">
+        <button class="gem"><img src="./assets/images/green-crystal.png" alt="Red gem"></button>>
+        <button class="gem"><img src="./assets/images/orange-crystal.png" alt="Green gem"></button>
+        <button class="gem"><img src="./assets/images/shadow-crystal.png" alt="Blue gem"></button>
+        <button class="gem"><img src="./assets/images/amethyst.png" alt="Purple gem"></button>
+    </div>
+
+    <div class="score-container clear">
+        <div class="score-double-wrap">
+            <div class="score-wrap">
+
+                <hr>
+                <br>
+                <h2 class="reset-button">Reset</h2>
+                <br>
+                <hr>
+            </div>
+        </div>
+    </div>
+
+    <div class="tally">
+        <h1>
+           [ Even Splits ] : <span class="wins">0</span>
+        </h1>
+        <br>
+        <h1>
+           [ Uneven Splits ] : <span class="losses">0</span>
+        </h1>
+    </div>
+
+
+
+
 
 
     <script type="text/css" src="./assets/javascript/game.js"></script>
 </body>
+
 </html>
