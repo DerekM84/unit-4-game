@@ -1,4 +1,5 @@
 body {
+    background-color:black;
     background-image: url(../images/cave-image.jpg);
     background-repeat:no-repeat;
     color:white;
@@ -7,21 +8,29 @@ body {
 }
 
 .header-container {
-    display:inline-flex;
+    position:relative;
+    display:block;
     margin-top: 30px;
-    margin: 30px;
+    margin: 55px;
     margin-bottom: 15px;
-    width:675px;
+    width: 675px;
+
+}
+
+.boxes-container {
+    display:inline-flex;
+    position:relative;
+    top:-40px;
 
 }
 .gem-container {
     position: fixed;
     display: inline-block;
     z-index: 10;
-    right: -40px;
-    top: 310px;
-    width: 45%;
-    height: 250px;
+    left: 830px;
+    top: 20px;
+    width: 200px;;
+    height: 180px;
 }
 .gem {
     border-radius: 40%;
@@ -29,8 +38,8 @@ body {
     border: 2px solid black;
 
     margin: 20px;
-    margin-top:20px;
-    margin-bottom:20px;
+    margin-top:10px;
+    margin-bottom:10px;
 }
 .gem img {
     display: block;
@@ -92,8 +101,7 @@ hr {
 .score-container{
     display:inline-flex;   
     position:relative;
-    top:40px;
-    margin: 20px;
+    margin: 25px;
 }
 .score-double-wrap{
     background-color: black;
@@ -128,15 +136,11 @@ hr {
 .score-wrap h3 {
     position:relative;
     top:25px;
+    font-size:40px;
 }
 .total-score {
     position:relative;
     top:25px;
-}
-
-.clear {
-    position:relative;
-    left: 500px;
 }
 
 .clear .score-wrap:hover {
@@ -145,20 +149,23 @@ hr {
 }
 
 .tally {
-    position:fixed;
+    position:relative;
     text-align: center;
-    top:540px;
-    left: 175px;
-    font-size: 25px;
+    width: 550px;
+    top:-125px;
+    left: 85px;
+    font-size: 35px;
     color: rgb(168, 228, 168);
 }
+
 .tally span {
-    font-size: 30px;
+    font-size: 35px;
     color: lavenderblush;
+    
 }
-@media screen and (min-width: 1425px) {
+/* @media screen and (min-width: 1425px) {
 
     body {
     display:none;
     }
-}
+} */
