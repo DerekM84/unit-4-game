@@ -7,11 +7,35 @@ $(document).ready(function() {
 var wins = 0;
 var losses = 0;
 var totalScore = 0;
+var targetScore = (Math.floor((Math.random() * 101)+30));
+            $(".target-score").empty();
+            $(".target-score").append(targetScore);
+
+var randomNumbers = ["1","3","7","11"];
+            $(".one").attr("data-value",randomNumbers[0]);
+            $(".two").attr("data-value",randomNumbers[1]);
+            $(".three").attr("data-value",randomNumbers[2]);
+            $(".four").attr("data-value",randomNumbers[3]);
 
 function reset() {
     totalScore=0;
-    $(".net-worth").empty();
-    $(".gem-value").empty();
+    targetScore = (Math.floor((Math.random() * 101)+30));
+            $(".target-score").empty();
+            $(".target-score").append(targetScore);
+            $(".net-worth").empty();
+            $(".gem-value").empty();
+
+    function buttonValues() {
+        var newRandoms =[0,0,0,0];
+        for (let i = 0; i < newRandoms.length; i++) {
+            newRandoms[i]=(Math.floor((Math.random() * 15)+1));
+            };
+            $(".one").attr("data-value",newRandoms[0]);
+            $(".two").attr("data-value",newRandoms[1]);
+            $(".three").attr("data-value",newRandoms[2]);
+            $(".four").attr("data-value",newRandoms[3]);
+    }
+        buttonValues();
 }
 // Reset variables and clear numbers from boxes
 
@@ -21,7 +45,6 @@ $(".reset-button").on("click", function() {
 } );
 
 // Display gem value while hovering over one, and no value while not hovering.
-
 $(".gem").on("mouseenter", function() {
     var gemValue = parseInt($(this).attr("data-value"));
         console.log("Hovering over a gem worth " + gemValue);
@@ -45,7 +68,7 @@ $(".gem").on("click", function() {
 
         console.log("totalScore is a " + typeof totalScore);
 
-    if (totalScore === 100) {
+    if (totalScore === targetScore) {
         wins++;
         $(".net-worth").empty();
         $(".wins").empty();
@@ -53,7 +76,7 @@ $(".gem").on("click", function() {
         reset();
     }
 
-    else if (totalScore > 100) {
+    else if (totalScore > targetScore) {
         losses++;
         $(".net-worth").empty();
         $(".losses").empty();
