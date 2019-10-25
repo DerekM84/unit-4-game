@@ -1,9 +1,9 @@
-console.log("game.js linked");
+    console.log("game.js linked");
 
 $(document).ready(function() {
     console.log("document ready function");
 
-
+// establishing variables and assigning values to begin first round of the game
 var wins = 0;
 var losses = 0;
 var totalScore = 0;
@@ -17,6 +17,8 @@ var randomNumbers = ["1","3","7","11"];
             $(".three").attr("data-value",randomNumbers[2]);
             $(".four").attr("data-value",randomNumbers[3]);
 
+
+// function to clear out old values, erase from screen, and generate new randoms
 function reset() {
     totalScore=0;
     targetScore = (Math.floor((Math.random() * 101)+30));
@@ -35,19 +37,18 @@ function reset() {
             $(".three").attr("data-value",newRandoms[2]);
             $(".four").attr("data-value",newRandoms[3]);
     }
-        buttonValues();
+    buttonValues();
 }
-// Reset variables and clear numbers from boxes
 
 $(".reset-button").on("click", function() {
         console.log("reset clicked");
     reset();
 } );
 
-// Display gem value while hovering over one, and no value while not hovering.
+// Display gem value while hovering
 $(".gem").on("mouseenter", function() {
     var gemValue = parseInt($(this).attr("data-value"));
-        console.log("Hovering over a gem worth " + gemValue);
+        console.log("This gem's current randomized value is " + gemValue);
     $(".gem-value").empty();
     $(".gem-value").append(gemValue);
 });
@@ -59,13 +60,11 @@ $(".gem").on("mouseleave", function() {
 // Clicking any button will add the unique data-value to the total score and check to see if 100 has been reached yet
 
 $(".gem").on("click", function() {
-    console.log("clicked a button worth " + $(this).attr("data-value"));
     totalScore = totalScore + parseInt($(this).attr("data-value"));
+        console.log("clicked a button worth " + $(this).attr("data-value"));
         console.log(totalScore);
-
     $(".net-worth").empty();
     $(".net-worth").append(totalScore);
-
         console.log("totalScore is a " + typeof totalScore);
 
     if (totalScore === targetScore) {
